@@ -27,3 +27,27 @@ function getStudents() {
 }
 
 getStudents();
+
+document.querySelector("add_student").addEventListener("click", (e) => {
+  e.preventDefault();
+  let name = document.getElementById("name").value;
+  let email = document.getElementById("email").value;
+  let address = document.getElementById("address").value;
+  let data = { name, email, address };
+  fetch("http://localhost/ajaxCRUD/api.php", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  })
+    .then((res) => {
+      return res.json();
+    })
+    .then((data) => {
+      getStudents();
+    })
+    .catch((err) => {
+      console.log(err);
+    });
+});

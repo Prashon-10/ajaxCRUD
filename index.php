@@ -10,6 +10,15 @@
 <body>
     <blockquote>
         <h1>Students Record</h1>
+        <form action="">
+            <label for="name">Name</label><br>
+            <input type="text" id="name"><br>
+            <label for="email">Email</label><br>
+            <input type="email" id="email"><br>
+            <label for="address">Address</label><br>
+            <input type="text" id="address"><br><br>
+            <button id="add_student">Add Student</button>
+        </form>
         <hr>
         <table border="1" width="100%">
             <thead>
